@@ -13,6 +13,7 @@ def index():
 
 @main.route('/create_new', methods = ['POST','GET'])
 @login_required
+
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
@@ -25,4 +26,23 @@ def new_post():
         return redirect(url_for('main.index'))
         
     return render_template('new_post.html', form = form)
+
+def review(post_id):
+  form = ReviewForm
+  post = Post.query.get(post_id)
+  all_reviews = Review.query.filter_by(post_id = post_id).all()
+  if form.validate_on_submit():
+    thoughts = form.thoughts.data
+    comments= form.comments.data
+    user_id = current_user
+    post_id = post_id
+    new_review = Review(comments = comments,user_id = user_id,post_id = post_id ,thoughts = thoughts)
+    new_review.save_r()
+        return redirect(url_for('.review', post_id = post_id)
+
+    return render_template('review.html', form =form, post = post,all_reviews=all_reviews)
+    
+
+
+
 
