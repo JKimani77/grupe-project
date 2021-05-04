@@ -34,14 +34,14 @@ def review(post_id):
   if form.validate_on_submit():
     thoughts = form.thoughts.data
     comments= form.comments.data
-    user_id = current_user
+    user_id = current_user._get_current_object().id
     post_id = post_id
     new_review = Review(comments = comments,user_id = user_id,post_id = post_id ,thoughts = thoughts)
     new_review.save_r()
         return redirect(url_for('.review', post_id = post_id)
 
     return render_template('review.html', form =form, post = post,all_reviews=all_reviews)
-    
+
 
 
 
