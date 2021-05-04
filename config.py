@@ -14,9 +14,11 @@ class Config:
 class ProdConfig(Config):
 
     pass
-# add this later---   SQLALCHEMY_DATABASE_URI='postgresql://cldhnjtxxhymfa:03575ce94d6db2282ae6a842942a8e34660f538fa5e5b05ecc8a3f48e29fb8ad@ec2-23-23-128-222.compute-1.amazonaws.com:5432/dbeme2dn5uq3kd'
+    #SQLALCHEMY_DATABASE_URI='postgresql://cldhnjtxxhymfa:03575ce94d6db2282ae6a842942a8e34660f538fa5e5b05ecc8a3f48e29fb8ad@ec2-23-23-128-222.compute-1.amazonaws.com:5432/dbeme2dn5uq3kd'
     
-   
+    #postgres://cldhnjtxxhymfa:03575ce94d6db2282ae6a842942a8e34660f538fa5e5b05ecc8a3f48e29fb8ad@ec2-23-23-128-222.compute-1.amazonaws.com:5432/dbeme2dn5uq3kd
+
+
 class DevConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:Ivonne1236987@localhost:5432/geak'
     DEBUG = True
