@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-violet" style="margin-bottom: 0;">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/" style="color: black;">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('main.new_post', name=current_user.username)}}" style="color: black;">Post a project</a>
+        </li>
+        {% if current_user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" style="color: black;" href="{{url_for('main.profile',name=current_user.username)}}">Profile</a></li>
+        <li><a class="nav-link" href="{{url_for('auth.logout')}}" style="color: black;">Sign out</a></li><br>
+        {% else %}
+        <li><a class="nav-link" href="{{url_for('auth.login')}}" style="color: black;">Sign in</a></li><br>
+        {%endif%}
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
