@@ -24,7 +24,7 @@ def signup():
         user.save_u()
         mail_message("Welcome to our Application","email/welcome_user",user.email,user=user)
         return redirect(url_for('auth.login'))
-    return render_template('auth/signup.html', r_form = form)
+    return render_template('auth/signup.html', reg_form = form)
 
 @auth.route('/logout')
 @login_required
