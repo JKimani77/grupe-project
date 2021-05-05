@@ -10,14 +10,14 @@
           <a class="nav-link" href="/" style="color: black;">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url_for('main.new_post', name=current_user.username)}}" style="color: black;">Post a project</a>
+          <a class="nav-link" href="{{url_for('main.new_post', name=current_user.name)}}" style="color: black;">Post a project</a>
         </li>
         {% if current_user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link" style="color: black;" href="{{url_for('main.profile',name=current_user.username)}}">Profile</a></li>
-        <li><a class="nav-link" href="{{url_for('auth.logout')}}" style="color: black;">Sign out</a></li><br>
+          <a class="nav-link" style="color: black;" href="#">Profile</a></li>
+        <li><a class="nav-link" href="#" style="color: black;">Sign out</a></li><br>
         {% else %}
-        <li><a class="nav-link" href="{{url_for('auth.login')}}" style="color: black;">Sign in</a></li><br>
+        <li><a class="nav-link" href="#" style="color: black;">Sign in</a></li><br>
         {%endif%}
         </li>
       </ul>
