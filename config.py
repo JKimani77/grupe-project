@@ -1,11 +1,11 @@
 import os
 
 class Config:
-    CLIENT_SECRET = os.environ.get('SECRET_KEY')
-    CLIENT_ID = os.environ.get('CLIENT_ID')
+    #CLIENT_SECRET = os.environ.get('SECRET_KEY')
+    #CLIENT_ID = os.environ.get('CLIENT_ID')
     API_KEY = os.environ.get('API_KEY')
-    BASE_URL = os.environ.get('BASE_URL')
-    AUTH_URL = os.environ.get('AUTH_URL')
+    REPO_URL = os.environ.get('REPO_URL')
+    USER_URL = os.environ.get('USER_URL')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     ###
 
