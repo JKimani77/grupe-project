@@ -15,9 +15,9 @@
         {% if current_user.is_authenticated %}
         <li class="nav-item">
           <a class="nav-link" style="color: black;" href="#">Profile</a></li>
-        <li><a class="nav-link" href="#" style="color: black;">Sign out</a></li><br>
+        <li><a class="nav-link" href="{{url_for('auth.login')}}" style="color: black;">Sign out</a></li><br>
         {% else %}
-        <li><a class="nav-link" href="#" style="color: black;">Sign in</a></li><br>
+        <li><a class="nav-link" href="{{url_for('auth.signup')}}" style="color: black;">Sign in</a></li><br>
         {%endif%}
         </li>
       </ul>

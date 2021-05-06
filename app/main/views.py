@@ -8,6 +8,8 @@ from .forms import PostForm,ReviewForm
 @main.route('/')
 def index():
     posts = Post.query.all()
+    #posts = get_post_by_id()
+
     
     return render_template('index.html', posts= posts)
 
@@ -21,11 +23,15 @@ def new_post():
     if form.validate_on_submit():
         title = form.title.data
         post_info = form.post_info.data
-        image = form.image.data
+        #image = form.image.data
         user_id = current_user
-        new_post_object = Post(post_info=post_info,user_id=current_user.load_user().id,image=image,title=title)
+        new_post_object = Post(post_info=post_info,title=title,user_id = user_id)
         new_post_object.save_post()
+
+        
+
         return redirect(url_for('main.index'))
+        import pdb; pdb.set_trace()
         
     return render_template('new_post.html', form = form)
 
