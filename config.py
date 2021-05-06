@@ -1,7 +1,11 @@
 import os
 
 class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY')
+    #CLIENT_SECRET = os.environ.get('SECRET_KEY')
+    #CLIENT_ID = os.environ.get('CLIENT_ID')
+    API_KEY = os.environ.get('API_KEY')
+    REPO_URL = os.environ.get('REPO_URL')
+    USER_URL = os.environ.get('USER_URL')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     ###
 
@@ -26,4 +30,10 @@ class DevConfig(Config):
 config_options = {
 'development':DevConfig,
 'production':ProdConfig
+}
+
+##base urls below
+#current_user_url": "https://api.github.com/user",
+#repository_search_url": "https://api.github.com/search/repositories?q={query}{&page,per_page,sort,order}"
+#user_search_url": "https://api.github.com/search/users?q={query}{&page,per_page,sort,order}"
 }
