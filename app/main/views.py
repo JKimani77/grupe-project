@@ -29,6 +29,8 @@ def new_post():
         
     return render_template('new_post.html', form = form)
 
+@main.route('/review', methods = ['POST','GET'])
+@login_required
 def review(post_id):
   form = ReviewForm
   post = Post.query.get(post_id)
