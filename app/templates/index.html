@@ -1,16 +1,27 @@
-{% extend 'base.html'%}
+{% extends 'base.html'%}
 {% block content %}
     
         <div  class="container" id="particles-js">
                 <h2 class="text-center" id="posts">POSTS</h2>
             <ul class="nav nav-pills nav-justified nav-fill" role="tablist">
                 <li class="nav-item" >
-                    <a id ="cats" class="nav-link" data-toggle="tab" href="#all"><strong> POSTS</strong> </a>
+                    <a id ="cats" class="nav-link" data-toggle="tab" href="/"><strong>Home</strong> </a>
                 </li>
             </ul>
+
+            <p> {{posts.title}}</p>
+           
             <div class="tab-content">
                 <div  class="container tab-pane active" id="all"><br>
-                    {{ index.display(posts)}}
+                    <div style=" font-family: -apple-system;text-align:left;color: rgb(0, 0, 0);
+                    background-color: rgb(31, 151, 145);" class="card">
+
+                        <p> {{posts.title}}</p>
+                        &nbsp;  &nbsp;
+                        <br>
+                        <p>{{posts.post_info}}</p>
+
+                    </div>
                 </div>             
             </div>
         </div>

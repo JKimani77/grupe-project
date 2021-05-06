@@ -1,0 +1,4 @@
+Hello {{user.username}}
+Welcome to Gram4Geeks
+We have just seen you signed up for our application and want to welcome you to the family. 
+Enjoy!!!
